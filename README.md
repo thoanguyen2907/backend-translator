@@ -1,6 +1,6 @@
-# Spring Boot Project with PostgreSQL, DTO, MapStruct, Global Exception Handling, and JUnit Testing
 
-This project demonstrates how to build a Spring Boot application following the MVC (Model-View-Controller) pattern, with a PostgreSQL database connection. It utilizes DTOs (Data Transfer Objects) and MapStruct for mapping data between the client and server, and implements global exception handling to manage errors efficiently. The project also includes integration testing using JUnit to ensure proper functionality.
+This project demonstrates how to build a basic Spring Boot application following the MVC (Model-View-Controller) pattern including features: get all items, edit an item; with a PostgreSQL database connection. 
+It utilizes DTOs (Data Transfer Objects) and MapStruct for mapping data between the client and server, and implements global exception handling to manage errors efficiently. The project also includes integration testing using JUnit to ensure proper functionality.
 
 ## Features
 
