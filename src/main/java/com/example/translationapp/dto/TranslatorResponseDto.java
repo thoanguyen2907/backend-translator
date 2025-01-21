@@ -1,7 +1,6 @@
 package com.example.translationapp.dto;
 
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 
 @Getter
 @Setter

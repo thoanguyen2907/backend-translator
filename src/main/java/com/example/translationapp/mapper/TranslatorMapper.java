@@ -4,7 +4,6 @@ import com.example.translationapp.dto.TranslatorResponseDto;
 import com.example.translationapp.dto.TranslatorUpdateDto;
 import com.example.translationapp.model.entity.TranslationEntity;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.NullValuePropertyMappingStrategy;
 
