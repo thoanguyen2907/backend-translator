@@ -37,7 +37,7 @@ This project follows the **MVC (Model-View-Controller)** architecture:
 
 - **Java 17+**
 - **Maven**: For building the project.
-- **PostgreSQL**: Ensure you have a PostgreSQL database up and running.
+- **PostgreSQL**: Ensure you have a local PostgreSQL database up and running. Create application file to configure your own database connection
 
 ### Clone the Repository
 
