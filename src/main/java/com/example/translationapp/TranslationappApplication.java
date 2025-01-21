@@ -1,6 +1,7 @@
 package com.example.translationapp;
 
 import com.example.translationapp.model.entity.TranslationEntity;
+import com.example.translationapp.service.ITranslatorService;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.boot.CommandLineRunner;
@@ -19,24 +20,25 @@ public class TranslationappApplication {
 		SpringApplication.run(TranslationappApplication.class, args);
 	}
 
-//	@Bean
-//	CommandLineRunner runner() {
-//		return args -> {
-//			ObjectMapper mapper = new ObjectMapper();
-//			TypeReference<List<TranslationEntity>> typeReference = new TypeReference<List<TranslationEntity>>() {};
-//			InputStream inputStream = getClass().getClassLoader().getResourceAsStream("seedData/translation.json");
-//
-//			if (inputStream == null) {
-//				System.err.println("File not found: translations.json");
-//				return;
-//			}
-//			try {
-//				List<TranslationEntity> translations = mapper.readValue(inputStream, typeReference);
-//				System.out.println(translations);
-//				System.out.println("Translations loaded successfully!");
-//			} catch (IOException e) {
-//				System.err.println("Error loading translations: " + e.getMessage());
-//			}
-//		};
-//	}
+	@Bean
+	CommandLineRunner runner(ITranslatorService translatorService) {
+		return args -> {
+			ObjectMapper mapper = new ObjectMapper();
+			TypeReference<List<TranslationEntity>> typeReference = new TypeReference<List<TranslationEntity>>() {};
+			InputStream inputStream = getClass().getClassLoader().getResourceAsStream("seedData/translation.json");
+
+			if (inputStream == null) {
+				System.err.println("File not found: translations.json");
+				return;
+			}
+			try {
+				List<TranslationEntity> translations = mapper.readValue(inputStream, typeReference);
+				System.out.println(translations);
+				translatorService.save(translations);
+				System.out.println("Translations loaded successfully!");
+			} catch (IOException e) {
+				System.err.println("Error loading translations: " + e.getMessage());
+			}
+		};
+	}
 }
