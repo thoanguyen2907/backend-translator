@@ -13,7 +13,6 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class TranslationEntity extends BaseEntity {
-
     @Id
     @Column(name = "id", updatable = false, nullable = false)
     @JsonProperty("id")
