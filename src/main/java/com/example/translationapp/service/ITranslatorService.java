@@ -7,8 +7,6 @@ import com.example.translationapp.shared.PageList;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
-import java.util.UUID;
-
 public interface ITranslatorService {
     PageList<TranslatorResponseDto> getAllTranslation(String keyword, Pageable pageable);
     List<TranslationEntity> save(List<TranslationEntity> translationEntities);

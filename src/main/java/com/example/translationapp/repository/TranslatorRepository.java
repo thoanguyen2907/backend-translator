@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TranslatorRepository extends JpaRepository<TranslationEntity, Integer> {
-    Page<TranslationEntity> findByWordFirstLangContaining(String keyword, Pageable pageable);
+    Page<TranslationEntity> findByWordFirstLangContainingIgnoreCase(String keyword, Pageable pageable);
 
     @Query(value = "SELECT * FROM translates t ORDER BY t.id ASC", nativeQuery = true)
     Page<TranslationEntity> findAllOrderedById(Pageable pageable);

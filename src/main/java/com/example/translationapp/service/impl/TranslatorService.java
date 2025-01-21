@@ -29,7 +29,7 @@ public class TranslatorService implements ITranslatorService {
     public PageList<TranslatorResponseDto> getAllTranslation(String keyword, Pageable pageable) {
         var translationPage = (keyword == null || keyword.isBlank())
                 ? translatorRepository.findAllOrderedById(pageable)
-                : translatorRepository.findByWordFirstLangContaining(keyword, pageable);
+                : translatorRepository.findByWordFirstLangContainingIgnoreCase(keyword, pageable);
 
         var translatorResponseList = translationPage.getContent()
                 .stream()
