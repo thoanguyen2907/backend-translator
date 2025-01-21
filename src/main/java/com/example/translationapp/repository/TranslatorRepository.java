@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TranslatorRepository extends JpaRepository<TranslationEntity, Integer> {
-    Page<TranslationEntity> findByWordFirstLangOrWordSecondLang(String keyword, Pageable pageable);
+    Page<TranslationEntity> findByWordFirstLangContaining(String keyword, Pageable pageable);
 }
